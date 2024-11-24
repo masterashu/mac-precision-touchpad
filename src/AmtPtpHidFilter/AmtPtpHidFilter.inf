@@ -29,9 +29,9 @@ AmtPtpHidFilter.sys  = 1,,
 ;*****************************************
 
 [Manufacturer]
-%ManufacturerName%=Standard,NT$ARCH$.10.0...19045
+%ManufacturerName%=Standard,NT$ARCH$.10.0...19041
 
-[Standard.NT$ARCH$.10.0...19045]
+[Standard.NT$ARCH$.10.0...19041]
 ; Driver migration: if this user installed the old Precision Touch Driver, install the generic HID USB driver for them
 %AmtPtpHidRootDevice.DeviceDesc%=StandardUsbHid_Device, USB\Vid_05ac&Pid_0324&MI_01
 

@@ -25,9 +25,9 @@ AmtPtpDeviceSpiKm.sys = 1,,
 AmtPtpHidFilter.sys   = 1,,
 
 [Manufacturer]
-%ManufacturerName%=Standard,NT$ARCH$.10.0...19045
+%ManufacturerName%=Standard,NT$ARCH$.10.0...19041
 
-[Standard.NT$ARCH$.10.0...19045]
+[Standard.NT$ARCH$.10.0...19041]
 ; Apple T2
 %AmtPtpDeviceUsbKm.DeviceDesc%=AmtPtpDeviceUsbKm_Device, USB\Vid_05ac&Pid_0273&MI_02
 %AmtPtpDeviceUsbKm.DeviceDesc%=AmtPtpDeviceUsbKm_Device, USB\Vid_05ac&Pid_0274&MI_02
