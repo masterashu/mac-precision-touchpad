@@ -55,8 +55,8 @@ namespace AmtPtpDevice.Settings
 
         private void SetupWatcher()
         {
-            m_inputDevice = new UsbHidDeviceAccessSubscription(HidDevice.GetDeviceSelector(0xff00, 0x0001, 0x05ac, 0x0265));
-            m_battery = new UsbHidDeviceAccessSubscription(HidDevice.GetDeviceSelector(0xff00, 0x0014, 0x05ac, 0x0265));
+            m_inputDevice = new UsbHidDeviceAccessSubscription(HidDevice.GetDeviceSelector(0xff00, 0x0001, 0x05ac, 0x0324));
+            m_battery = new UsbHidDeviceAccessSubscription(HidDevice.GetDeviceSelector(0xff00, 0x0014, 0x05ac, 0x0324));
 
             m_inputDevice.TargetDeviceAvailable += OnInputDeviceAvailable;
             m_inputDevice.TargetDeviceLost += OnInputDeviceLost;

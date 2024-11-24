@@ -29,22 +29,23 @@ AmtPtpHidFilter.sys  = 1,,
 ;*****************************************
 
 [Manufacturer]
-%ManufacturerName%=Standard,NT$ARCH$.10.0
+%ManufacturerName%=Standard,NT$ARCH$.10.0...19045
 
-[Standard.NT$ARCH$.10.0]
+[Standard.NT$ARCH$.10.0...19045]
 ; Driver migration: if this user installed the old Precision Touch Driver, install the generic HID USB driver for them
-%AmtPtpHidRootDevice.DeviceDesc%=StandardUsbHid_Device, USB\Vid_05ac&Pid_0265&MI_01
+%AmtPtpHidRootDevice.DeviceDesc%=StandardUsbHid_Device, USB\Vid_05ac&Pid_0324&MI_01
 
 ; The fact is, you can't filter HIDUSB or friends directly, because they load the export driver called
 ; HIDCLASS which overrides their IO Major Function pointers. Therefore we still implement our own HID miniport 
 ; transport, but in fact reusing the underlying HID transport (either Bluetooth or USB).
 ; Some high-level patches involved to modify the underlying driver IO handlers.
-%AmtPtpHidFilter.DeviceDesc%=AmtPtpHidFilter_MiniPortDevice, HID\VID_05AC&PID_0265&REV_0855&MI_01&Col01
-%AmtPtpHidFilter.DeviceDesc%=AmtPtpHidFilter_MiniPortDevice, HID\{00001124-0000-1000-8000-00805f9b34fb}_VID&0001004c_PID&0265&Col01
+%AmtPtpHidFilter.DeviceDesc%=AmtPtpHidFilter_MiniPortDevice, HID\VID_05AC&PID_0324&REV_0855&MI_01&Col01
+%AmtPtpHidFilter.DeviceDesc%=AmtPtpHidFilter_MiniPortDevice, HID\{00001124-0000-1000-8000-00805f9b34fb}_VID&0001004c_PID&0324&Col01
 ; To avoid confusions to OS, disable any other collections.
-%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\VID_05AC&PID_0265&REV_0855&MI_01&Col02
-%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\VID_05AC&PID_0265&REV_0855&MI_01&Col03
-%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\{00001124-0000-1000-8000-00805f9b34fb}_VID&0001004c_PID&0265&Col02
+%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\VID_05AC&PID_0324&REV_0855&MI_01&Col02
+%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\VID_05AC&PID_0324&REV_0855&MI_01&Col03
+%AmtPtpHidFilter.NullDeviceDesc%=AmtPtpHidFilter_NullDevice, HID\{00001124-0000-1000-8000-00805f9b34fb}_VID&0001004c_PID&0324&Col02
+
 
 [FilterDriver_Payload]
 AmtPtpHidFilter.sys

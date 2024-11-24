@@ -134,6 +134,19 @@ AmtPtpGetHidDescriptor(
 			pSelectedHidDescriptor = &AmtPtpMt2DefaultHidDescriptor;
 			break;
 		}
+		case USB_DEVICE_ID_APPLE_MAGICTRACKPAD4_USBC:
+		{
+			TraceEvents(
+				TRACE_LEVEL_INFORMATION,
+				TRACE_DRIVER,
+				"%!FUNC! Request HID Report Descriptor for Apple Magic Trackpad 4 Family"
+			);
+
+			szHidDescriptor = AmtPtpMt2DefaultHidDescriptor.bLength;
+			pSelectedHidDescriptor = &AmtPtpMt2DefaultHidDescriptor;
+			break;
+		}
+
 	}
 
 	if (pSelectedHidDescriptor != NULL && szHidDescriptor > 0) {
@@ -336,6 +349,13 @@ AmtPtpGetReportDescriptor(
 			pSelectedHidDescriptor = AmtPtpMt2ReportDescriptor;
 			break;
 		}
+		case USB_DEVICE_ID_APPLE_MAGICTRACKPAD4_USBC:
+		{
+			szHidDescriptor = AmtPtpMt2DefaultHidDescriptor.DescriptorList[0].wReportLength;
+			pSelectedHidDescriptor = AmtPtpMt2ReportDescriptor;
+			break;
+		}
+
 	}
 
 	if (pSelectedHidDescriptor != NULL && szHidDescriptor > 0) {

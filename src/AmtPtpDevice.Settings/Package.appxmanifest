@@ -25,7 +25,7 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <DeviceCapability Name="humaninterfacedevice">
-      <Device Id="vidpid:05ac 0265">
+      <Device Id="vidpid:05ac 0324">
         <!-- Input experience settings -->
         <Function Type="usage:FF00 0001" />
         <!-- Battery information -->

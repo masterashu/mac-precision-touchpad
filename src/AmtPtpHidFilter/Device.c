@@ -305,12 +305,13 @@ PtpFilterConfigureMultiTouch(
     
     // Check if this device is supported for configuration.
     // So far in this prototype, we support Magic Trackpad 2 in USB (05AC:0265) or Bluetooth mode (004c:0265)
+    // Adding support for Magic Trackpad USB C in USB (05AC:0324) and Bluetooth (004c:0324)
     if (deviceContext->VendorID != HID_VID_APPLE_USB && deviceContext->VendorID != HID_VID_APPLE_BT) {
         TraceEvents(TRACE_LEVEL_ERROR, TRACE_DEVICE, "%!FUNC! Vendor not supported: 0x%x", deviceContext->VendorID);
         status = STATUS_NOT_SUPPORTED;
         goto exit;
     }
-    if (deviceContext->ProductID != HID_PID_MAGIC_TRACKPAD_2) {
+    if (deviceContext->ProductID != HID_PID_MAGIC_TRACKPAD_4_USBC) {
         TraceEvents(TRACE_LEVEL_ERROR, TRACE_DEVICE, "%!FUNC! Product not supported: 0x%x", deviceContext->ProductID);
         status = STATUS_NOT_SUPPORTED;
         goto exit;
